@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="288" viewBox="0 0 320 288" role="img" aria-labelledby="title desc">
+  <title id="title">Milan Webdesign Logo gestapelt</title>
+  <desc id="desc">Gestapelte Logo-Version mit M-Icon, Milan und Webdesign.</desc>
+  <g transform="translate(110 20)">
+    <path fill="#0D1B2A" d="M8 8h12l35 28v15L21 24v46H8V8Z"/>
+    <path fill="#1D4ED8" d="M92 8v62H79V24L45 51V36L80 8h12Z"/>
+    <path fill="#1D4ED8" d="M25 48 45 64 66 48v13L45 78 25 61V48Z"/>
+  </g>
+  <text x="160" y="168" text-anchor="middle" fill="#0D1B2A" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" letter-spacing="12" textLength="226">MILAN</text>
+  <line x1="62" y1="205" x2="96" y2="205" stroke="#1D4ED8" stroke-width="3"/>
+  <text x="160" y="210" text-anchor="middle" fill="#1D4ED8" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" letter-spacing="6" textLength="132">WEBDESIGN</text>
+  <line x1="224" y1="205" x2="258" y2="205" stroke="#1D4ED8" stroke-width="3"/>
+</svg>

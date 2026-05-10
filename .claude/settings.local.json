@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "PowerShell(Resolve-Path *)",
+      "PowerShell(Copy-Item *)",
+      "Bash(Get-ChildItem \"C:\\\\Users\\\\mljan\\\\milan-webdesign\\\\public\\\\brand\")",
+      "Bash(Select-Object Name)",
+      "Bash(node *)"
+    ]
+  }
+}

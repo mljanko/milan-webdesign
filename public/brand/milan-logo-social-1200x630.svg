@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Milan Webdesign Social Preview</title>
+  <desc id="desc">Social Preview mit Logo und Text Moderne Webseiten für kleine Schweizer Firmen.</desc>
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <rect y="118" width="1200" height="512" fill="#0D1B2A"/>
+  <path d="M668 630C784 503 922 436 1200 410v220H668Z" fill="#132D48"/>
+  <path d="M770 630C890 516 1018 474 1200 452v178H770Z" fill="#1D4ED8" opacity="0.16"/>
+  <g transform="translate(72 24) scale(0.62)">
+    <path fill="#0D1B2A" d="M8 8h12l35 28v15L21 24v46H8V8Z"/>
+    <path fill="#1D4ED8" d="M92 8v62H79V24L45 51V36L80 8h12Z"/>
+    <path fill="#1D4ED8" d="M25 48 45 64 66 48v13L45 78 25 61V48Z"/>
+  </g>
+  <text x="152" y="68" fill="#0D1B2A" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800" letter-spacing="8" textLength="168">MILAN</text>
+  <line x1="152" y1="90" x2="176" y2="90" stroke="#1D4ED8" stroke-width="2.5"/>
+  <text x="186" y="94" fill="#1D4ED8" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="800" letter-spacing="4.5" textLength="100">WEBDESIGN</text>
+  <line x1="296" y1="90" x2="324" y2="90" stroke="#1D4ED8" stroke-width="2.5"/>
+  <text x="80" y="278" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="800" letter-spacing="0">Moderne Webseiten für</text>
+  <text x="80" y="356" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="800" letter-spacing="0">kleine Schweizer Firmen</text>
+  <text x="82" y="432" fill="#60A5FA" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" letter-spacing="4">Arbon · Thurgau · Ostschweiz</text>
+  <line x1="84" y1="480" x2="288" y2="480" stroke="#1D4ED8" stroke-width="6"/>
+</svg>
