@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     url: "https://milan-webdesign.ch",
     images: [
       {
-        url: "/brand/milan-logo-social-1200x630.png",
+        url: "https://milan-webdesign.ch/brand/social-preview-whatsapp.png",
         width: 1200,
         height: 630,
         alt: "Milan Webdesign – Moderne Webseiten für kleine Schweizer Firmen",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Milan Webdesign – Moderne Webseiten für kleine Schweizer Firmen",
     description:
       "Website-Relaunch und moderne Webseiten für KMU in Arbon, Thurgau und Ostschweiz.",
-    images: ["/brand/milan-logo-social-1200x630.png"],
+    images: ["https://milan-webdesign.ch/brand/social-preview-whatsapp.png"],
   },
 };
 

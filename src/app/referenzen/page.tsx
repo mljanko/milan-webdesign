@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "https://milan-webdesign.ch/referenzen",
     images: [
       {
-        url: "/brand/milan-logo-social-1200x630.png",
+        url: "https://milan-webdesign.ch/brand/social-preview-whatsapp.png",
         width: 1200,
         height: 630,
         alt: "Milan Webdesign – Moderne Webseiten für kleine Schweizer Firmen",
