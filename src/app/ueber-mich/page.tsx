@@ -5,13 +5,13 @@ import SectionTitle from "@/components/SectionTitle";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Über mich – Webdesigner Milan aus Arbon, Thurgau",
+  title: "Über mich – Webdesigner in Arbon & Thurgau",
   description:
-    "Milan unterstützt kleine Unternehmen in der Ostschweiz dabei, ihre Webseite modern, klar und mobilfreundlich zu gestalten. Persönlich, fair und ohne Agenturaufwand.",
+    "Milan Jankovic unterstützt kleine KMU mit Webdesign in Arbon, Thurgau und der Ostschweiz. Persönliche Webseiten für KMU, fair und verständlich umgesetzt.",
   openGraph: {
-    title: "Über mich – Webdesigner Milan aus Arbon, Thurgau",
+    title: "Über mich – Webdesigner in Arbon & Thurgau",
     description:
-      "Persönliche Beratung und faire Preise für KMU-Webseiten in der Ostschweiz.",
+      "Persönliches Webdesign aus Arbon für kleine Schweizer KMU in Thurgau und der Ostschweiz.",
     url: "https://milan-webdesign.ch/ueber-mich",
     images: [
       {
@@ -28,31 +28,31 @@ const values = [
   {
     title: "Persönlicher Kontakt",
     description:
-      "Sie arbeiten direkt mit mir zusammen – ohne Zwischenstellen, ohne anonyme Agenturprozesse. Ich bin für Sie erreichbar.",
+      "Sie sprechen direkt mit mir. Ich höre zu, frage nach und begleite Ihr Projekt persönlich statt über anonyme Agenturwege.",
   },
   {
     title: "Verständliche Umsetzung",
     description:
-      "Ich erkläre, was ich mache und warum. Kein Fachjargon, keine unnötige Komplexität – nur klare Kommunikation.",
+      "Ich erkläre die Schritte klar und nachvollziehbar. So wissen Sie jederzeit, was entsteht und warum es für Ihre Website sinnvoll ist.",
   },
   {
     title: "Fokus auf lokale KMU",
     description:
-      "Kleine Unternehmen in der Schweiz haben andere Bedürfnisse als internationale Konzerne. Darauf ist mein Angebot ausgerichtet.",
+      "Mein Angebot ist auf kleine Firmen, Handwerker und Dienstleister in Arbon, Thurgau und der Ostschweiz ausgerichtet.",
   },
   {
     title: "Faire Preise",
     description:
-      "Faire, nachvollziehbare Preise – passend zum Budget kleiner Unternehmen.",
+      "Sie erhalten klare, nachvollziehbare Angebote, die zum Budget kleiner Unternehmen passen und keine unnötige Komplexität enthalten.",
   },
 ];
 
 const profile = [
-  { label: "Name", value: "Milan" },
+  { label: "Name", value: "Milan Jankovic" },
   { label: "Standort", value: "Arbon, Thurgau" },
   { label: "Region", value: "Ostschweiz & Bodenseeregion" },
   { label: "Fokus", value: "Webseiten für kleine KMU" },
-  { label: "Sprachen", value: "Deutsch, Englisch" },
+  { label: "Sprachen", value: "Deutsch, Serbisch, Englisch" },
 ];
 
 const trustPoints = [
@@ -139,27 +139,29 @@ export default function UeberMichPage() {
           <div className="grid grid-cols-1 items-start gap-14 md:grid-cols-2">
             <div>
               <SectionTitle
-                label="Mein Hintergrund"
+                label="Warum Milan Webdesign"
                 title="Was mich antreibt"
                 centered={false}
               />
               <div className="space-y-4 text-sm leading-relaxed text-slate-600 md:text-base">
                 <p>
-                  Viele kleine Unternehmen haben eine Website, die nicht mehr zu
-                  ihnen passt – veraltet, schlecht auf dem Handy oder einfach
-                  nicht klar genug strukturiert. Das kostet Vertrauen und
+                  Ich weiss, wie wichtig ein klarer und professioneller Auftritt
+                  für kleine Unternehmen ist. Viele Betriebe leisten gute Arbeit,
+                  aber ihre Website zeigt das nicht richtig – sie wirkt veraltet,
+                  ist auf dem Handy unübersichtlich oder bringt zu wenige
                   Anfragen.
                 </p>
                 <p>
-                  Ich helfe dabei, das zu ändern. Nicht mit übertriebenen
-                  Lösungen, sondern mit klaren, einfachen Webseiten, die den Job
-                  machen: erklären, wer Sie sind, was Sie anbieten und wie man
-                  Sie kontaktiert.
+                  Genau hier unterstütze ich. Ich erstelle moderne, einfache und
+                  verständliche Webseiten, die Vertrauen schaffen und Kunden
+                  schnell zeigen, wer Sie sind, was Sie anbieten und wie man Sie
+                  erreicht.
                 </p>
                 <p>
-                  Mein Standort ist Arbon im Thurgau. Ich kenne die lokale
-                  Unternehmenslandschaft und weiss, was kleine Betriebe in der
-                  Ostschweiz brauchen – und was nicht.
+                  Mein Ziel ist nicht, komplizierte Agentur-Lösungen zu
+                  verkaufen. Ich möchte kleinen Unternehmen aus Arbon, Thurgau
+                  und der Ostschweiz helfen, online professioneller aufzutreten –
+                  fair, persönlich und ohne unnötige Komplexität.
                 </p>
               </div>
             </div>
@@ -192,6 +194,22 @@ export default function UeberMichPage() {
                 </div>
               </dl>
             </div>
+          </div>
+
+          <div className="mt-14 rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
+            <h2 className="mb-4 text-2xl font-bold text-slate-950">
+              Mein Hintergrund
+            </h2>
+            <p className="text-sm leading-relaxed text-slate-600 md:text-base">
+              Mein Interesse für Webdesign, WordPress und moderne Webseiten habe
+              ich über mehrere Weiterbildungen in den Bereichen Webentwicklung,
+              WordPress, JavaScript und Onlinemarketing vertieft. Gleichzeitig
+              kenne ich durch meine praktische Berufserfahrung auch die Welt von
+              Handwerk, Bau und lokalen Betrieben. Dadurch verstehe ich, worauf
+              es kleinen Unternehmen wirklich ankommt: eine klare Website,
+              einfache Pflege, faire Kosten und ein Ergebnis, das Kunden
+              überzeugt.
+            </p>
           </div>
         </div>
       </section>
@@ -240,13 +258,13 @@ export default function UeberMichPage() {
       </section>
 
       <CTASection
-        title="Gemeinsam zu einer besseren Website"
-        description="Unkompliziert, transparent und auf Ihr Unternehmen zugeschnitten – für KMU in Arbon, Thurgau und der Ostschweiz."
+        title="Bereit für eine bessere Website?"
+        description="Ich prüfe gerne unverbindlich, wie Ihre aktuelle Website wirkt und wo Verbesserungen möglich sind."
         primaryCta={{
           label: "Website kostenlos prüfen lassen",
           href: "/kontakt",
         }}
-        secondaryCta={{ label: "Leistungen ansehen", href: "/leistungen" }}
+        secondaryCta={{ label: "Kontakt aufnehmen", href: "/kontakt" }}
       />
     </>
   );
