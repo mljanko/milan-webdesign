@@ -58,7 +58,7 @@ export default function Header() {
           alt=""
           fill
           priority
-          sizes="100vw"
+          sizes="(min-width: 1024px) 100vw, 1px"
           className="object-fill"
         />
         <Link
