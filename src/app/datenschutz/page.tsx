@@ -40,8 +40,8 @@ export default function DatenschutzPage() {
         </div>
 
         <div className="mb-10 rounded-2xl border border-blue-100 bg-blue-50/70 p-5 text-sm leading-relaxed text-slate-700">
-          Diese Datenschutzerklärung wird angepasst, wenn sich rechtliche
-          Anforderungen, eingesetzte Dienste oder die Website-Funktionen ändern.
+          Diese Datenschutzerklärung informiert darüber, wie personenbezogene
+          Daten auf dieser Website bearbeitet werden.
         </div>
 
         <div className="space-y-6">
@@ -152,12 +152,8 @@ export default function DatenschutzPage() {
             <p>
               Diese Website wird bei ServerTown gehostet. Beim Aufruf der
               Website können technische Zugriffsdaten verarbeitet werden, um die
-              Website sicher, stabil und performant bereitzustellen.
-            </p>
-            <p>
-              ServerTown gibt an, Hosting mit Server-Standort Schweiz
-              anzubieten. Massgeblich sind die jeweils vereinbarten technischen
-              Hosting-Leistungen.
+              Website sicher, stabil und performant bereitzustellen. ServerTown
+              gibt an, Hosting mit Server-Standort Schweiz anzubieten.
             </p>
           </Section>
 

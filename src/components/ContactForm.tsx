@@ -120,6 +120,7 @@ export default function ContactForm() {
           id="addressLine2"
           name="addressLine2"
           type="text"
+          aria-hidden="true"
           aria-label="Optionales Zusatzfeld"
           tabIndex={-1}
           autoComplete="off"
