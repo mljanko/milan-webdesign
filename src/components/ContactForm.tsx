@@ -103,16 +103,27 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div
-        className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden"
+        className="pointer-events-none absolute -left-[9999px] top-auto h-px w-px overflow-hidden opacity-0"
         aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          top: "auto",
+          width: "1px",
+          height: "1px",
+          overflow: "hidden",
+          opacity: 0,
+          pointerEvents: "none",
+        }}
       >
-        <label htmlFor="addressLine2">Bitte leer lassen</label>
         <input
           id="addressLine2"
           name="addressLine2"
           type="text"
+          aria-label="Optionales Zusatzfeld"
           tabIndex={-1}
           autoComplete="off"
+          className="h-px w-px border-0 p-0"
         />
       </div>
 
