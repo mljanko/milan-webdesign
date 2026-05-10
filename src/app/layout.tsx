@@ -66,6 +66,7 @@ const jsonLd = {
     "Professionelle Webseiten und Website-Relaunch für KMU in Arbon, Thurgau und der Ostschweiz.",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Waldeggstrasse 7",
     addressLocality: "Arbon",
     addressRegion: "TG",
     postalCode: "9320",

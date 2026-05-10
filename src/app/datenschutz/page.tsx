@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-// TODO: Vollständige Postadresse vor Veröffentlichung ergänzen und prüfen.
 // TODO: Genaue technische Hostingdetails, Serverstandorte und Auftragsbearbeitung prüfen.
 // TODO: Tracking-/Cookie-Status vor Veröffentlichung nochmals technisch prüfen.
 
@@ -45,7 +44,7 @@ export default function DatenschutzPage() {
 
         <div className="mb-10 rounded-2xl border border-blue-100 bg-blue-50/70 p-5 text-sm leading-relaxed text-slate-700">
           Diese Datenschutzerklärung wird vor der Veröffentlichung nochmals
-          geprüft und mit den finalen Anbieter- und Hostingangaben ergänzt.
+          geprüft und mit den finalen technischen Hostingangaben abgeglichen.
         </div>
 
         <div className="space-y-6">
@@ -57,7 +56,8 @@ export default function DatenschutzPage() {
             <div className="rounded-xl bg-slate-50 p-4">
               <p className="font-semibold text-slate-950">Milan Webdesign</p>
               <p>Milan Jankovic</p>
-              <p>Die vollständige Postadresse wird vor der Veröffentlichung ergänzt.</p>
+              <p>Waldeggstrasse 7</p>
+              <p>9320 Arbon</p>
               <p>Schweiz</p>
               <p className="mt-3">
                 E-Mail:{" "}

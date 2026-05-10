@@ -32,9 +32,6 @@ export default function DemoProjectCard({
             className="object-contain p-2"
           />
         </div>
-        <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-navy/70 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white shadow-sm shadow-navy/30 backdrop-blur">
-          Konzept / Demo-Projekt
-        </span>
       </div>
 
       <div className="flex flex-1 flex-col p-6">

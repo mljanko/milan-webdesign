@@ -3,10 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Impressum",
   description: "Impressum von Milan Webdesign - Angaben gemäss Schweizer Recht.",
-  robots: { index: false, follow: false },
 };
-
-// TODO: Vor Veröffentlichung müssen Name, Adresse und E-Mail final geprüft und ergänzt werden.
 
 export default function ImpressumPage() {
   return (
@@ -21,11 +18,6 @@ export default function ImpressumPage() {
           </h1>
         </div>
 
-        <div className="mb-10 rounded-2xl border border-blue-100 bg-blue-50/70 p-5 text-sm leading-relaxed text-slate-700">
-          Die vollständigen Anbieterangaben werden vor der Veröffentlichung
-          ergänzt.
-        </div>
-
         <div className="space-y-6">
           <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="mb-4 text-xl font-bold text-slate-950">
@@ -37,6 +29,10 @@ export default function ImpressumPage() {
                 Milan Webdesign
                 <br />
                 Inhaber: Milan Jankovic
+                <br />
+                Waldeggstrasse 7
+                <br />
+                9320 Arbon
                 <br />
                 Schweiz
               </dd>
@@ -73,8 +69,8 @@ export default function ImpressumPage() {
             <p className="text-sm leading-relaxed text-slate-700">
               Diese Website informiert über Dienstleistungen von Milan
               Webdesign. Die Angaben zur verantwortlichen Person und
-              Kontaktadresse werden vor der Veröffentlichung vollständig ergänzt
-              und geprüft.
+              Kontaktadresse sind im Abschnitt Anbieter / Verantwortliche Person
+              aufgeführt.
             </p>
           </section>
 

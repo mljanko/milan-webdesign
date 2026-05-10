@@ -40,7 +40,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.8,
     },
-    // /impressum und /datenschutz werden absichtlich weggelassen, bis die
-    // rechtlichen Platzhalter durch echte Inhalte ersetzt sind.
+    {
+      url: `${BASE}/impressum`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    // /datenschutz wird absichtlich weggelassen, bis die finalen
+    // technischen Hostingdetails geprüft sind.
   ];
 }
