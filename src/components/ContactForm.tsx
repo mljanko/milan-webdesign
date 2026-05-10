@@ -20,6 +20,9 @@ const budgets = [
 
 type Status = "idle" | "loading" | "success" | "error";
 
+const sendErrorMessage =
+  "Die Nachricht konnte leider nicht gesendet werden. Bitte schreiben Sie direkt an info@milan-webdesign.ch.";
+
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -45,13 +48,12 @@ export default function ContactForm() {
       } else {
         const json = await res.json().catch(() => ({}));
         setErrorMsg(
-          (json as { error?: string }).error ??
-            "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+          (json as { error?: string }).error ?? sendErrorMessage
         );
         setStatus("error");
       }
     } catch {
-      setErrorMsg("Netzwerkfehler. Bitte prüfen Sie Ihre Verbindung.");
+      setErrorMsg(sendErrorMessage);
       setStatus("error");
     }
   }
@@ -100,7 +102,10 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-      <div className="hidden" aria-hidden="true">
+      <div
+        className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden"
+        aria-hidden="true"
+      >
         <label htmlFor="addressLine2">Bitte leer lassen</label>
         <input
           id="addressLine2"

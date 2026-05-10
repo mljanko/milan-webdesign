@@ -9,9 +9,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-// TODO: Genaue technische Hostingdetails, Serverstandorte und Auftragsbearbeitung prüfen.
-// TODO: Tracking-/Cookie-Status vor Veröffentlichung nochmals technisch prüfen.
-
 function Section({
   title,
   children,
@@ -43,8 +40,8 @@ export default function DatenschutzPage() {
         </div>
 
         <div className="mb-10 rounded-2xl border border-blue-100 bg-blue-50/70 p-5 text-sm leading-relaxed text-slate-700">
-          Diese Datenschutzerklärung wird vor der Veröffentlichung nochmals
-          geprüft und mit den finalen technischen Hostingangaben abgeglichen.
+          Diese Datenschutzerklärung wird angepasst, wenn sich rechtliche
+          Anforderungen, eingesetzte Dienste oder die Website-Funktionen ändern.
         </div>
 
         <div className="space-y-6">
@@ -144,33 +141,23 @@ export default function DatenschutzPage() {
           <Section title="E-Mail-Versand über Resend">
             <p>
               Für den Versand und die Zustellung von Kontaktformular-Anfragen
-              verwenden wir den E-Mail-Dienst Resend.
+              verwenden wir den E-Mail-Dienst Resend. Dabei können die
+              eingegebenen Formulardaten und technische Versanddaten an Resend
+              übermittelt werden.
             </p>
-            <p>
-              Beim Versand können die Formularangaben und technische Versanddaten
-              an Resend übermittelt werden. Resend kann Daten ausserhalb der
-              Schweiz bearbeiten. Es gelten die Datenschutzbestimmungen von
-              Resend.
-            </p>
-            <p>
-              Details zur Datenbearbeitung durch Resend sind vor der
-              Veröffentlichung nochmals anhand der aktuellen Resend-Unterlagen zu
-              prüfen.
-            </p>
+            <p>Es gelten die Datenschutzbestimmungen von Resend.</p>
           </Section>
 
           <Section title="Hosting">
             <p>
               Diese Website wird bei ServerTown gehostet. Beim Aufruf der
-              Website können technische Zugriffsdaten wie IP-Adresse, Datum und
-              Uhrzeit des Zugriffs, Browserinformationen und aufgerufene Seiten
-              verarbeitet werden. Diese Daten sind erforderlich, um die Website
-              sicher, stabil und performant bereitzustellen.
+              Website können technische Zugriffsdaten verarbeitet werden, um die
+              Website sicher, stabil und performant bereitzustellen.
             </p>
             <p>
               ServerTown gibt an, Hosting mit Server-Standort Schweiz
-              anzubieten. Die genauen technischen Details und Serverstandorte
-              werden vor der Veröffentlichung nochmals geprüft.
+              anzubieten. Massgeblich sind die jeweils vereinbarten technischen
+              Hosting-Leistungen.
             </p>
           </Section>
 

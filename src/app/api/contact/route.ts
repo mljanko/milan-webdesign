@@ -60,7 +60,7 @@ export async function POST(req: NextRequest) {
     return Response.json(
       {
         error:
-          "Das Kontaktformular ist momentan nicht vollständig konfiguriert. Bitte senden Sie Ihre Anfrage direkt per E-Mail an info@milan-webdesign.ch.",
+          "Die Nachricht konnte leider nicht gesendet werden. Bitte schreiben Sie direkt an info@milan-webdesign.ch.",
       },
       { status: 503 }
     );
@@ -97,7 +97,7 @@ export async function POST(req: NextRequest) {
       return Response.json(
         {
           error:
-            "E-Mail konnte nicht gesendet werden. Bitte versuchen Sie es später erneut oder schreiben Sie direkt an info@milan-webdesign.ch.",
+            "Die Nachricht konnte leider nicht gesendet werden. Bitte schreiben Sie direkt an info@milan-webdesign.ch.",
         },
         { status: 502 }
       );
@@ -107,7 +107,7 @@ export async function POST(req: NextRequest) {
     return Response.json(
       {
         error:
-          "E-Mail konnte nicht gesendet werden. Bitte versuchen Sie es später erneut oder schreiben Sie direkt an info@milan-webdesign.ch.",
+          "Die Nachricht konnte leider nicht gesendet werden. Bitte schreiben Sie direkt an info@milan-webdesign.ch.",
       },
       { status: 502 }
     );
