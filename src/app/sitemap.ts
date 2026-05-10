@@ -40,7 +40,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.8,
     },
-    // /impressum und /datenschutz werden absichtlich weggelassen, weil die
-    // Sitemap nur die öffentlichen Hauptseiten enthalten soll.
+    {
+      url: `${BASE}/impressum`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${BASE}/datenschutz`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 }
