@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   },
   description:
     "Datenschutzerklärung von Milan Webdesign mit Informationen zur Bearbeitung personenbezogener Daten, Kontaktformular, Hosting und Rechten betroffener Personen.",
-  robots: { index: false, follow: false },
 };
 
 function Section({
@@ -150,10 +149,16 @@ export default function DatenschutzPage() {
 
           <Section title="Hosting">
             <p>
-              Diese Website wird bei ServerTown gehostet. Beim Aufruf der
-              Website können technische Zugriffsdaten verarbeitet werden, um die
-              Website sicher, stabil und performant bereitzustellen. ServerTown
-              gibt an, Hosting mit Server-Standort Schweiz anzubieten.
+              Diese Website wird bei Netlify gehostet. Beim Aufruf der Website
+              können technische Zugriffsdaten wie IP-Adresse, Datum und Uhrzeit
+              des Zugriffs, Browserinformationen und aufgerufene Seiten
+              verarbeitet werden, um die Website sicher, stabil und performant
+              bereitzustellen.
+            </p>
+            <p>
+              Netlify kann zur Auslieferung der Website Server- und
+              CDN-Infrastruktur einsetzen. Technische Zugriffsdaten können zur
+              Sicherheit, Stabilität und Fehleranalyse verarbeitet werden.
             </p>
           </Section>
 
