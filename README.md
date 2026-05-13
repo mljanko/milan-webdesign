@@ -28,7 +28,7 @@ Diese Variablen muessen in Netlify gesetzt werden:
 ```bash
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 CONTACT_TO_EMAIL=info@milan-webdesign.ch
-CONTACT_FROM_EMAIL=Milan Webdesign <noreply@milan-webdesign.ch>
+CONTACT_FROM_EMAIL=Milan Webdesign <kontakt@milan-webdesign.ch>
 ```
 
 Keine echten API-Keys im Repository speichern.

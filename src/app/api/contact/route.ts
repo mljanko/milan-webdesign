@@ -1,13 +1,20 @@
 import { NextRequest } from "next/server";
 import { Resend } from "resend";
 
-const FROM = process.env.CONTACT_FROM_EMAIL;
-const TO = process.env.CONTACT_TO_EMAIL;
+const FALLBACK_CONTACT_EMAIL = "info@milan-webdesign.ch";
+const FROM =
+  process.env.CONTACT_FROM_EMAIL ||
+  "Milan Webdesign <kontakt@milan-webdesign.ch>";
+const TO = process.env.CONTACT_TO_EMAIL || FALLBACK_CONTACT_EMAIL;
+const REPLY_TO = FALLBACK_CONTACT_EMAIL;
 
 type ContactPayload = {
   name?: unknown;
   firma?: unknown;
   email?: unknown;
+  phone?: unknown;
+  telefon?: unknown;
+  tel?: unknown;
   website?: unknown;
   leistung?: unknown;
   budget?: unknown;
@@ -31,6 +38,7 @@ export async function POST(req: NextRequest) {
   const name = text(body.name);
   const firma = text(body.firma);
   const email = text(body.email);
+  const phone = text(body.phone) || text(body.telefon) || text(body.tel);
   const website = text(body.website);
   const leistung = text(body.leistung);
   const budget = text(body.budget);
@@ -56,7 +64,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  if (!process.env.RESEND_API_KEY || !FROM || !TO) {
+  if (!process.env.RESEND_API_KEY) {
     return Response.json(
       {
         error:
@@ -72,6 +80,7 @@ export async function POST(req: NextRequest) {
   <tr><td style="padding:24px 0 8px"><strong>Name</strong><br>${esc(name)}</td></tr>
   ${firma ? `<tr><td style="padding:8px 0"><strong>Firma</strong><br>${esc(firma)}</td></tr>` : ""}
   <tr><td style="padding:8px 0"><strong>E-Mail</strong><br><a href="mailto:${esc(email)}">${esc(email)}</a></td></tr>
+  ${phone ? `<tr><td style="padding:8px 0"><strong>Telefon</strong><br>${esc(phone)}</td></tr>` : ""}
   ${normalizedWebsite ? `<tr><td style="padding:8px 0"><strong>Website</strong><br><a href="${esc(normalizedWebsite)}">${esc(normalizedWebsite)}</a></td></tr>` : ""}
   ${leistung ? `<tr><td style="padding:8px 0"><strong>Gewünschte Leistung</strong><br>${esc(leistung)}</td></tr>` : ""}
   ${budget ? `<tr><td style="padding:8px 0"><strong>Budget</strong><br>${esc(budget)}</td></tr>` : ""}
@@ -87,7 +96,7 @@ export async function POST(req: NextRequest) {
     const { error } = await resend.emails.send({
       from: FROM,
       to: TO,
-      replyTo: email,
+      replyTo: REPLY_TO,
       subject,
       html,
     });
