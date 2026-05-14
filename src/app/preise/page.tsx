@@ -38,6 +38,7 @@ const packages = [
       { text: "Impressum / Datenschutz-Struktur" },
     ],
     highlighted: false,
+    ctaHref: "/kontakt?paket=starter",
   },
   {
     name: "Business",
@@ -52,6 +53,7 @@ const packages = [
       { text: "Responsive Design für alle Geräte" },
     ],
     highlighted: true,
+    ctaHref: "/kontakt?paket=business",
   },
   {
     name: "Premium",
@@ -66,6 +68,7 @@ const packages = [
       { text: "Langfristige Zusammenarbeit möglich" },
     ],
     highlighted: false,
+    ctaHref: "/kontakt?paket=premium",
   },
 ];
 
@@ -114,6 +117,7 @@ export default function PreisePage() {
                 description={pkg.description}
                 features={pkg.features}
                 highlighted={pkg.highlighted}
+                ctaHref={pkg.ctaHref}
               />
             ))}
           </div>

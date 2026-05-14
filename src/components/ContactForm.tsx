@@ -18,12 +18,23 @@ const budgets = [
   "ab CHF 4'500 (Premium)",
 ];
 
+const packages = [
+  "Starter Website",
+  "Business Website",
+  "Premium Website",
+  "Individuelle Anfrage",
+];
+
 type Status = "idle" | "loading" | "success" | "error";
 
 const sendErrorMessage =
   "Die Nachricht konnte leider nicht gesendet werden. Bitte schreiben Sie direkt an info@milan-webdesign.ch.";
 
-export default function ContactForm() {
+export default function ContactForm({
+  initialPackage = "",
+}: {
+  initialPackage?: string;
+}) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -197,6 +208,28 @@ export default function ContactForm() {
           className={fieldClass}
           placeholder="https://www.meinefirma.ch"
         />
+      </div>
+
+      <div>
+        <label
+          htmlFor="paket"
+          className="block text-sm font-medium text-slate-700 mb-1.5"
+        >
+          Gewünschtes Paket
+        </label>
+        <select
+          id="paket"
+          name="paket"
+          className={fieldClass}
+          defaultValue={initialPackage}
+        >
+          <option value="">Bitte auswählen</option>
+          {packages.map((pkg) => (
+            <option key={pkg} value={pkg}>
+              {pkg}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

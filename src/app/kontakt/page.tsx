@@ -21,7 +21,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function KontaktPage() {
+const packageByParam: Record<string, string> = {
+  starter: "Starter Website",
+  business: "Business Website",
+  premium: "Premium Website",
+};
+
+type KontaktPageProps = {
+  searchParams?: Promise<{ paket?: string | string[] }>;
+};
+
+export default async function KontaktPage({ searchParams }: KontaktPageProps) {
+  const params = searchParams ? await searchParams : {};
+  const paketParam = Array.isArray(params.paket) ? params.paket[0] : params.paket;
+  const initialPackage = paketParam ? packageByParam[paketParam] ?? "" : "";
+
   return (
     <>
       <section className="bg-gradient-to-br from-navy to-navy-light py-24 px-6 text-center">
@@ -134,7 +148,7 @@ export default function KontaktPage() {
               <h2 className="font-bold text-slate-900 text-lg mb-6">
                 Anfrage senden
               </h2>
-              <ContactForm />
+              <ContactForm initialPackage={initialPackage} />
             </div>
           </div>
         </div>
