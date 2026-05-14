@@ -7,16 +7,19 @@ export const metadata: Metadata = {
   description:
     "Nehmen Sie Kontakt auf und erhalten Sie eine kostenlose, unverbindliche Website-Prüfung. Milan Webdesign – Arbon, Thurgau. Antwort in der Regel innert 24–48 Stunden.",
   openGraph: {
+    siteName: "Milan Webdesign",
+    locale: "de_CH",
+    type: "website",
     title: "Kontakt – Kostenlose Website-Prüfung anfragen",
     description:
       "Unverbindliche Anfrage für Ihre neue Website oder Ihren Website-Relaunch. Milan Webdesign, Arbon.",
     url: "https://milan-webdesign.ch/kontakt",
     images: [
       {
-        url: "https://milan-webdesign.ch/brand/social-preview-whatsapp.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Milan Webdesign – Moderne Webseiten für kleine Schweizer Firmen",
+        alt: "Milan Webdesign – Moderne Websites für KMU",
       },
     ],
   },

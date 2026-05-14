@@ -3,13 +3,18 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const siteTitle = "Milan Webdesign – Moderne Websites für KMU";
+const siteDescription =
+  "Professionelle Websites für KMU und Selbständige in Arbon, Thurgau und der Ostschweiz. Modern, schnell und kundenorientiert.";
+const socialPreviewImage = "/og-image.jpg";
+const socialPreviewAlt = "Milan Webdesign – Moderne Websites für KMU";
+
 export const metadata: Metadata = {
   title: {
-    default: "Milan Webdesign – Moderne Webseiten für kleine Schweizer Firmen",
+    default: siteTitle,
     template: "%s | Milan Webdesign",
   },
-  description:
-    "Website-Relaunch und moderne Webseiten für KMU in Arbon, Thurgau und Ostschweiz.",
+  description: siteDescription,
   keywords: [
     "Webdesign Arbon",
     "Webdesigner Thurgau",
@@ -33,25 +38,23 @@ export const metadata: Metadata = {
     siteName: "Milan Webdesign",
     locale: "de_CH",
     type: "website",
-    title: "Milan Webdesign – Moderne Webseiten für kleine Schweizer Firmen",
-    description:
-      "Website-Relaunch und moderne Webseiten für KMU in Arbon, Thurgau und Ostschweiz.",
+    title: siteTitle,
+    description: siteDescription,
     url: "https://milan-webdesign.ch",
     images: [
       {
-        url: "https://milan-webdesign.ch/brand/social-preview-whatsapp.png",
+        url: socialPreviewImage,
         width: 1200,
         height: 630,
-        alt: "Milan Webdesign – Moderne Webseiten für kleine Schweizer Firmen",
+        alt: socialPreviewAlt,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Milan Webdesign – Moderne Webseiten für kleine Schweizer Firmen",
-    description:
-      "Website-Relaunch und moderne Webseiten für KMU in Arbon, Thurgau und Ostschweiz.",
-    images: ["https://milan-webdesign.ch/brand/social-preview-whatsapp.png"],
+    title: siteTitle,
+    description: siteDescription,
+    images: [socialPreviewImage],
   },
 };
 

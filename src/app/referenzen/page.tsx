@@ -11,16 +11,19 @@ export const metadata: Metadata = {
   description:
     "Konzeptbeispiele für moderne Webseiten von Milan Webdesign – für Handwerker, Garagen, Gartenbau und kleine Schweizer KMU.",
   openGraph: {
+    siteName: "Milan Webdesign",
+    locale: "de_CH",
+    type: "website",
     title: "Referenzen & Konzeptbeispiele | Milan Webdesign",
     description:
       "Konzeptbeispiele für moderne Webseiten von Milan Webdesign – für Handwerker, Garagen, Gartenbau und kleine Schweizer KMU.",
     url: "https://milan-webdesign.ch/referenzen",
     images: [
       {
-        url: "https://milan-webdesign.ch/brand/social-preview-whatsapp.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Milan Webdesign – Moderne Webseiten für kleine Schweizer Firmen",
+        alt: "Milan Webdesign – Moderne Websites für KMU",
       },
     ],
   },

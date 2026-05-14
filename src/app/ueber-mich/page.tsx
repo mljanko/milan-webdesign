@@ -9,16 +9,19 @@ export const metadata: Metadata = {
   description:
     "Milan Jankovic unterstützt kleine KMU mit Webdesign in Arbon, Thurgau und der Ostschweiz. Persönliche Webseiten für KMU, fair und verständlich umgesetzt.",
   openGraph: {
+    siteName: "Milan Webdesign",
+    locale: "de_CH",
+    type: "website",
     title: "Über mich – Webdesigner in Arbon & Thurgau",
     description:
       "Persönliches Webdesign aus Arbon für kleine Schweizer KMU in Thurgau und der Ostschweiz.",
     url: "https://milan-webdesign.ch/ueber-mich",
     images: [
       {
-        url: "https://milan-webdesign.ch/brand/social-preview-whatsapp.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Milan Webdesign – Moderne Webseiten für kleine Schweizer Firmen",
+        alt: "Milan Webdesign – Moderne Websites für KMU",
       },
     ],
   },

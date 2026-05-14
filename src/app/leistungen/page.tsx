@@ -9,16 +9,19 @@ export const metadata: Metadata = {
   description:
     "Website-Relaunch, neue Firmenwebseiten, Kontaktformulare und SEO für KMU in Arbon, Thurgau und der Ostschweiz. Persönlich, klar und zum fairen Preis.",
   openGraph: {
+    siteName: "Milan Webdesign",
+    locale: "de_CH",
+    type: "website",
     title: "Leistungen – Webdesign & Website-Relaunch im Thurgau",
     description:
       "Professionelle Webdesign-Leistungen für KMU in Arbon und der Ostschweiz. Website-Relaunch, SEO, Kontaktformulare und laufende Wartung.",
     url: "https://milan-webdesign.ch/leistungen",
     images: [
       {
-        url: "https://milan-webdesign.ch/brand/social-preview-whatsapp.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Milan Webdesign – Moderne Webseiten für kleine Schweizer Firmen",
+        alt: "Milan Webdesign – Moderne Websites für KMU",
       },
     ],
   },

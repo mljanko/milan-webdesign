@@ -10,16 +10,19 @@ export const metadata: Metadata = {
   description:
     "Transparente Webdesign-Preise für KMU in der Schweiz. Starter ab CHF 1'200, Business ab CHF 2'500, Premium ab CHF 4'500. Alle Preise als Richtwerte, kostenlose Offerte.",
   openGraph: {
+    siteName: "Milan Webdesign",
+    locale: "de_CH",
+    type: "website",
     title: "Preise & Pakete – Webdesign Thurgau & Ostschweiz",
     description:
       "Klare Preise ohne Überraschungen. Webdesign-Pakete für KMU in der Schweiz ab CHF 1'200.",
     url: "https://milan-webdesign.ch/preise",
     images: [
       {
-        url: "https://milan-webdesign.ch/brand/social-preview-whatsapp.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Milan Webdesign – Moderne Webseiten für kleine Schweizer Firmen",
+        alt: "Milan Webdesign – Moderne Websites für KMU",
       },
     ],
   },

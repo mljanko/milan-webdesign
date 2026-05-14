@@ -9,21 +9,24 @@ import { getPackageContactHref } from "@/lib/contact-packages";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Milan Webdesign – Moderne Webseiten für kleine Schweizer Firmen",
+    absolute: "Milan Webdesign – Moderne Websites für KMU",
   },
   description:
-    "Website-Relaunch und moderne Webseiten für KMU in Arbon, Thurgau und Ostschweiz.",
+    "Professionelle Websites für KMU und Selbständige in Arbon, Thurgau und der Ostschweiz. Modern, schnell und kundenorientiert.",
   openGraph: {
-    title: "Milan Webdesign – Moderne Webseiten für kleine Schweizer Firmen",
+    siteName: "Milan Webdesign",
+    locale: "de_CH",
+    type: "website",
+    title: "Milan Webdesign – Moderne Websites für KMU",
     description:
-      "Website-Relaunch und moderne Webseiten für KMU in Arbon, Thurgau und Ostschweiz.",
+      "Professionelle Websites für KMU und Selbständige in Arbon, Thurgau und der Ostschweiz. Modern, schnell und kundenorientiert.",
     url: "https://milan-webdesign.ch",
     images: [
       {
-        url: "https://milan-webdesign.ch/brand/social-preview-whatsapp.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Milan Webdesign – Moderne Webseiten für kleine Schweizer Firmen",
+        alt: "Milan Webdesign – Moderne Websites für KMU",
       },
     ],
   },
