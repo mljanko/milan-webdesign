@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import InstagramIcon from "@/components/InstagramIcon";
 import SectionTitle from "@/components/SectionTitle";
 import CTASection from "@/components/CTASection";
+
+const instagramUrl = "https://www.instagram.com/milanwebdesign.ch";
 
 export const metadata: Metadata = {
   title: "Über mich – Webdesigner in Arbon & Thurgau",
@@ -200,6 +203,18 @@ export default function UeberMichPage() {
                   </dd>
                 </div>
               </dl>
+              <a
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 flex items-start gap-2 rounded-xl border border-blue-100 bg-white px-4 py-3 text-sm font-medium leading-relaxed text-accent transition-colors hover:border-blue-200 hover:bg-blue-50 hover:text-accent-dark"
+              >
+                <InstagramIcon className="mt-0.5 h-4 w-4 shrink-0" />
+                <span>
+                  Folge Milan Webdesign auf Instagram für Website-Tipps und
+                  Einblicke.
+                </span>
+              </a>
             </div>
           </div>
 

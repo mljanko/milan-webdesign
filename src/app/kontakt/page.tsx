@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import InstagramIcon from "@/components/InstagramIcon";
 import { getPackageOptionByParam } from "@/lib/contact-packages";
+
+const instagramUrl = "https://www.instagram.com/milanwebdesign.ch";
 
 export const metadata: Metadata = {
   title: "Kontakt – Kostenlose Website-Prüfung anfragen",
@@ -88,6 +91,24 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
                         className="text-accent hover:underline"
                       >
                         info@milan-webdesign.ch
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-9 h-9 bg-blue-50 rounded-xl shrink-0 flex items-center justify-center mt-0.5">
+                      <InstagramIcon className="w-4 h-4 text-accent" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-slate-800 mb-0.5">
+                        Instagram
+                      </div>
+                      <a
+                        href={instagramUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent hover:underline"
+                      >
+                        @milanwebdesign.ch
                       </a>
                     </div>
                   </div>

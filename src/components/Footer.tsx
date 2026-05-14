@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import InstagramIcon from "@/components/InstagramIcon";
+
+const instagramUrl = "https://www.instagram.com/milanwebdesign.ch";
 
 const angebotLinks = [
   { href: "/leistungen", label: "Leistungen" },
@@ -51,6 +54,16 @@ export default function Footer() {
                 Beratung auf Deutsch, Englisch und Serbisch möglich.
               </p>
             </address>
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Milan Webdesign auf Instagram"
+              className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-blue-200 transition-colors hover:border-blue-300/40 hover:bg-white/10 hover:text-white"
+            >
+              <InstagramIcon className="h-4 w-4" />
+              <span>Instagram</span>
+            </a>
           </div>
 
           <div>
