@@ -1,5 +1,9 @@
 import { NextRequest } from "next/server";
 import { Resend } from "resend";
+import {
+  PACKAGE_SELECT_OPTIONS,
+  getPackageOptionByLabel,
+} from "@/lib/contact-packages";
 
 const FALLBACK_CONTACT_EMAIL = "info@milan-webdesign.ch";
 const FROM =
@@ -7,12 +11,7 @@ const FROM =
   "Milan Webdesign <kontakt@milan-webdesign.ch>";
 const TO = process.env.CONTACT_TO_EMAIL || FALLBACK_CONTACT_EMAIL;
 const REPLY_TO = FALLBACK_CONTACT_EMAIL;
-const PACKAGE_OPTIONS = new Set([
-  "Starter Website",
-  "Business Website",
-  "Premium Website",
-  "Individuelle Anfrage",
-]);
+const PACKAGE_OPTIONS = new Set(PACKAGE_SELECT_OPTIONS);
 
 type ContactPayload = {
   name?: unknown;
@@ -49,8 +48,9 @@ export async function POST(req: NextRequest) {
   const website = text(body.website);
   const paketValue = text(body.paket);
   const paket = PACKAGE_OPTIONS.has(paketValue) ? paketValue : "";
+  const packageOption = getPackageOptionByLabel(paket);
   const leistung = text(body.leistung);
-  const budget = text(body.budget);
+  const budget = packageOption?.budget ?? text(body.budget);
   const nachricht = text(body.nachricht);
 
   if (!name || !email || !nachricht) {
@@ -83,8 +83,8 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const subject = paket
-    ? `Neue Anfrage – ${paket}`
+  const subject = packageOption
+    ? `Neue Anfrage – ${packageOption.packageLabel}`
     : `Neue Anfrage von ${name}${firma ? ` (${firma})` : ""}`;
   const html = `
 <table style="font-family:sans-serif;font-size:15px;line-height:1.6;color:#1e293b;max-width:600px">

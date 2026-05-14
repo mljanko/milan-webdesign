@@ -1,6 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import {
+  BUDGET_SELECT_OPTIONS,
+  DEFAULT_BUDGET_OPTION,
+  PACKAGE_SELECT_OPTIONS,
+  getPackageOptionByLabel,
+} from "@/lib/contact-packages";
 
 const services = [
   "Website-Relaunch",
@@ -9,20 +15,6 @@ const services = [
   "SEO-Optimierung",
   "Wartung und Betreuung",
   "Anderes",
-];
-
-const budgets = [
-  "Noch offen",
-  "ab CHF 1'200 (Starter)",
-  "ab CHF 2'500 (Business)",
-  "ab CHF 4'500 (Premium)",
-];
-
-const packages = [
-  "Starter Website",
-  "Business Website",
-  "Premium Website",
-  "Individuelle Anfrage",
 ];
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -39,6 +31,18 @@ export default function ContactForm({
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [selectedPackage, setSelectedPackage] = useState(initialPackage);
+  const [selectedBudget, setSelectedBudget] = useState(() =>
+    getInitialBudget(initialPackage, initialBudget)
+  );
+
+  function handlePackageChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    const nextPackage = e.currentTarget.value;
+    const packageOption = getPackageOptionByLabel(nextPackage);
+
+    setSelectedPackage(nextPackage);
+    setSelectedBudget(packageOption?.budget ?? DEFAULT_BUDGET_OPTION);
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -112,7 +116,10 @@ export default function ContactForm({
 
   const fieldClass =
     "w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-accent transition-colors bg-white";
-  const visibleBudgets = initialBudget ? [initialBudget] : budgets;
+  const selectedPackageOption = getPackageOptionByLabel(selectedPackage);
+  const visibleBudgets = selectedPackageOption
+    ? [selectedPackageOption.budget]
+    : BUDGET_SELECT_OPTIONS;
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
@@ -224,10 +231,11 @@ export default function ContactForm({
           id="paket"
           name="paket"
           className={fieldClass}
-          defaultValue={initialPackage}
+          value={selectedPackage}
+          onChange={handlePackageChange}
         >
           <option value="">Bitte auswählen</option>
-          {packages.map((pkg) => (
+          {PACKAGE_SELECT_OPTIONS.map((pkg) => (
             <option key={pkg} value={pkg}>
               {pkg}
             </option>
@@ -263,9 +271,9 @@ export default function ContactForm({
             id="budget"
             name="budget"
             className={fieldClass}
-            defaultValue={initialBudget}
+            value={selectedBudget}
+            onChange={(e) => setSelectedBudget(e.currentTarget.value)}
           >
-            {!initialBudget && <option value="">Noch nicht sicher</option>}
             {visibleBudgets.map((b) => (
               <option key={b} value={b}>
                 {b}
@@ -319,5 +327,13 @@ export default function ContactForm({
         </a>
       </p>
     </form>
+  );
+}
+
+function getInitialBudget(packageLabel: string, fallbackBudget: string) {
+  return (
+    getPackageOptionByLabel(packageLabel)?.budget ||
+    fallbackBudget ||
+    DEFAULT_BUDGET_OPTION
   );
 }

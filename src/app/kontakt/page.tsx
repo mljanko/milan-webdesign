@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import { getPackageOptionByParam } from "@/lib/contact-packages";
 
 export const metadata: Metadata = {
   title: "Kontakt – Kostenlose Website-Prüfung anfragen",
@@ -21,18 +22,6 @@ export const metadata: Metadata = {
   },
 };
 
-const packageByParam: Record<string, string> = {
-  starter: "Starter Website",
-  business: "Business Website",
-  premium: "Premium Website",
-};
-
-const budgetByParam: Record<string, string> = {
-  starter: "ab CHF 1'200 (Starter)",
-  business: "ab CHF 2'500 (Business)",
-  premium: "ab CHF 4'500 (Premium)",
-};
-
 type KontaktPageProps = {
   searchParams?: Promise<{ paket?: string | string[] }>;
 };
@@ -40,8 +29,9 @@ type KontaktPageProps = {
 export default async function KontaktPage({ searchParams }: KontaktPageProps) {
   const params = searchParams ? await searchParams : {};
   const paketParam = Array.isArray(params.paket) ? params.paket[0] : params.paket;
-  const initialPackage = paketParam ? packageByParam[paketParam] ?? "" : "";
-  const initialBudget = paketParam ? budgetByParam[paketParam] ?? "" : "";
+  const packageOption = getPackageOptionByParam(paketParam);
+  const initialPackage = packageOption?.packageLabel ?? "";
+  const initialBudget = packageOption?.budget ?? "";
 
   return (
     <>
@@ -156,6 +146,7 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
                 Anfrage senden
               </h2>
               <ContactForm
+                key={`${initialPackage}-${initialBudget}`}
                 initialPackage={initialPackage}
                 initialBudget={initialBudget}
               />
