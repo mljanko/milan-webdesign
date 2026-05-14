@@ -27,6 +27,12 @@ const packageByParam: Record<string, string> = {
   premium: "Premium Website",
 };
 
+const budgetByParam: Record<string, string> = {
+  starter: "ab CHF 1'200 (Starter)",
+  business: "ab CHF 2'500 (Business)",
+  premium: "ab CHF 4'500 (Premium)",
+};
+
 type KontaktPageProps = {
   searchParams?: Promise<{ paket?: string | string[] }>;
 };
@@ -35,6 +41,7 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
   const params = searchParams ? await searchParams : {};
   const paketParam = Array.isArray(params.paket) ? params.paket[0] : params.paket;
   const initialPackage = paketParam ? packageByParam[paketParam] ?? "" : "";
+  const initialBudget = paketParam ? budgetByParam[paketParam] ?? "" : "";
 
   return (
     <>
@@ -148,7 +155,10 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
               <h2 className="font-bold text-slate-900 text-lg mb-6">
                 Anfrage senden
               </h2>
-              <ContactForm initialPackage={initialPackage} />
+              <ContactForm
+                initialPackage={initialPackage}
+                initialBudget={initialBudget}
+              />
             </div>
           </div>
         </div>

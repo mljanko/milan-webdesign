@@ -32,8 +32,10 @@ const sendErrorMessage =
 
 export default function ContactForm({
   initialPackage = "",
+  initialBudget = "",
 }: {
   initialPackage?: string;
+  initialBudget?: string;
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -110,6 +112,7 @@ export default function ContactForm({
 
   const fieldClass =
     "w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-accent transition-colors bg-white";
+  const visibleBudgets = initialBudget ? [initialBudget] : budgets;
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
@@ -256,9 +259,14 @@ export default function ContactForm({
           >
             Budget (optional)
           </label>
-          <select id="budget" name="budget" className={fieldClass}>
-            <option value="">Noch nicht sicher</option>
-            {budgets.map((b) => (
+          <select
+            id="budget"
+            name="budget"
+            className={fieldClass}
+            defaultValue={initialBudget}
+          >
+            {!initialBudget && <option value="">Noch nicht sicher</option>}
+            {visibleBudgets.map((b) => (
               <option key={b} value={b}>
                 {b}
               </option>
