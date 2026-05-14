@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import PricingCard from "@/components/PricingCard";
 import CTASection from "@/components/CTASection";
+import { getPackageContactHref } from "@/lib/contact-packages";
 
 export const metadata: Metadata = {
   title: "Preise & Pakete – Webdesign Thurgau & Ostschweiz",
@@ -38,7 +39,7 @@ const packages = [
       { text: "Impressum / Datenschutz-Struktur" },
     ],
     highlighted: false,
-    ctaHref: "/kontakt?paket=starter",
+    ctaHref: getPackageContactHref("starter"),
   },
   {
     name: "Business",
@@ -53,7 +54,7 @@ const packages = [
       { text: "Responsive Design für alle Geräte" },
     ],
     highlighted: true,
-    ctaHref: "/kontakt?paket=business",
+    ctaHref: getPackageContactHref("business"),
   },
   {
     name: "Premium",
@@ -68,7 +69,7 @@ const packages = [
       { text: "Langfristige Zusammenarbeit möglich" },
     ],
     highlighted: false,
-    ctaHref: "/kontakt?paket=premium",
+    ctaHref: getPackageContactHref("premium"),
   },
 ];
 

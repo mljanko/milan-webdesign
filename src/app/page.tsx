@@ -5,6 +5,7 @@ import SectionTitle from "@/components/SectionTitle";
 import ServiceCard from "@/components/ServiceCard";
 import PricingCard from "@/components/PricingCard";
 import CTASection from "@/components/CTASection";
+import { getPackageContactHref } from "@/lib/contact-packages";
 
 export const metadata: Metadata = {
   title: {
@@ -149,6 +150,7 @@ const packages = [
       { text: "Impressum / Datenschutz-Struktur" },
     ],
     highlighted: false,
+    ctaHref: getPackageContactHref("starter"),
   },
   {
     name: "Business",
@@ -163,6 +165,7 @@ const packages = [
       { text: "Responsive Design" },
     ],
     highlighted: true,
+    ctaHref: getPackageContactHref("business"),
   },
   {
     name: "Premium",
@@ -177,6 +180,7 @@ const packages = [
       { text: "Langfristige Zusammenarbeit" },
     ],
     highlighted: false,
+    ctaHref: getPackageContactHref("premium"),
   },
 ];
 
@@ -401,6 +405,7 @@ export default function HomePage() {
                 description={pkg.description}
                 features={pkg.features}
                 highlighted={pkg.highlighted}
+                ctaHref={pkg.ctaHref}
               />
             ))}
           </div>

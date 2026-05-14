@@ -56,3 +56,7 @@ export function getPackageOptionByLabel(label: string) {
     ) ?? null
   );
 }
+
+export function getPackageContactHref(param: PackageParam) {
+  return `/kontakt?paket=${param}`;
+}
