@@ -119,6 +119,32 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
                       </address>
                     </div>
                   </div>
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-9 h-9 bg-blue-50 rounded-xl shrink-0 flex items-center justify-center mt-0.5">
+                      <svg
+                        className="w-4 h-4 text-accent"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7m-3.5-7v7m-10-7h7"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-slate-800 mb-0.5">
+                        Sprachen
+                      </div>
+                      <p className="text-slate-600">
+                        Beratung auf Deutsch, Englisch und Serbisch möglich.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
 

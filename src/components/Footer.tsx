@@ -47,6 +47,9 @@ export default function Footer() {
               >
                 info@milan-webdesign.ch
               </a>
+              <p className="pt-2 text-slate-400">
+                Beratung auf Deutsch, Englisch und Serbisch möglich.
+              </p>
             </address>
           </div>
 

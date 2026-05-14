@@ -101,6 +101,10 @@ export default function UeberMichPage() {
               Fokus liegt auf sauberen Firmenwebseiten, einfacher Pflege und
               fairen Preisen.
             </p>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-blue-100/90">
+              Ich berate Sie gerne auf Deutsch, Englisch oder Serbisch – je
+              nachdem, was für Sie am angenehmsten ist.
+            </p>
 
             <ul className="mt-8 grid gap-3 text-sm font-medium text-white sm:grid-cols-3 lg:max-w-3xl">
               {trustPoints.map((point) => (
