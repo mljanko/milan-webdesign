@@ -25,6 +25,7 @@ type ContactPayload = {
   leistung?: unknown;
   budget?: unknown;
   nachricht?: unknown;
+  contactMeta?: unknown;
   addressLine2?: unknown;
 };
 
@@ -37,7 +38,7 @@ export async function POST(req: NextRequest) {
     return Response.json({ error: "Ungültige Anfrage." }, { status: 400 });
   }
 
-  if (text(body.addressLine2)) {
+  if (text(body.contactMeta) || text(body.addressLine2)) {
     return Response.json({ ok: true });
   }
 

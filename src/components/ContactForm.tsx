@@ -31,6 +31,9 @@ export default function ContactForm({
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [selectedPackage, setSelectedPackage] = useState(initialPackage);
   const [selectedBudget, setSelectedBudget] = useState(() =>
     getInitialBudget(initialPackage, initialBudget)
@@ -46,16 +49,46 @@ export default function ContactForm({
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("loading");
     setErrorMsg("");
 
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    const validationErrors = validateRequiredFields(name, email, message);
+
+    if (validationErrors.length > 0) {
+      console.warn("[contact] Frontend validation failed", {
+        errors: validationErrors,
+        values: {
+          hasName: Boolean(name.trim()),
+          email: email.trim(),
+          hasMessage: Boolean(message.trim()),
+          paket: selectedPackage,
+          budget: selectedBudget,
+        },
+      });
+      setErrorMsg(validationErrors.join(" "));
+      setStatus("error");
+      return;
+    }
+
+    setStatus("loading");
+
+    const formData = Object.fromEntries(new FormData(form));
+    const data = {
+      ...formData,
+      name: name.trim(),
+      email: email.trim(),
+      paket: selectedPackage,
+      budget: selectedBudget,
+      nachricht: message.trim(),
+    };
 
     try {
-      const res = await fetch("/api/contact", {
+      const endpoint = new URL("/api/contact", window.location.origin);
+      const res = await fetch(endpoint.toString(), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "same-origin",
+        cache: "no-store",
         body: JSON.stringify(data),
       });
 
@@ -64,12 +97,17 @@ export default function ContactForm({
         form.reset();
       } else {
         const json = await res.json().catch(() => ({}));
+        console.error("[contact] API submission failed", {
+          status: res.status,
+          error: (json as { error?: string }).error,
+        });
         setErrorMsg(
           (json as { error?: string }).error ?? sendErrorMessage
         );
         setStatus("error");
       }
-    } catch {
+    } catch (error) {
+      console.error("[contact] Request did not reach the contact API", error);
       setErrorMsg(sendErrorMessage);
       setStatus("error");
     }
@@ -138,8 +176,8 @@ export default function ContactForm({
         }}
       >
         <input
-          id="addressLine2"
-          name="addressLine2"
+          id="contactMeta"
+          name="contactMeta"
           type="text"
           aria-hidden="true"
           aria-label="Optionales Zusatzfeld"
@@ -165,6 +203,8 @@ export default function ContactForm({
             autoComplete="name"
             className={fieldClass}
             placeholder="Max Mustermann"
+            value={name}
+            onChange={(e) => setName(e.currentTarget.value)}
           />
         </div>
         <div>
@@ -195,11 +235,14 @@ export default function ContactForm({
         <input
           id="email"
           name="email"
-          type="email"
+          type="text"
+          inputMode="email"
           required
           autoComplete="email"
           className={fieldClass}
           placeholder="max@musterfirma.ch"
+          value={email}
+          onChange={(e) => setEmail(e.currentTarget.value)}
         />
       </div>
 
@@ -297,6 +340,8 @@ export default function ContactForm({
           rows={5}
           className={`${fieldClass} resize-none`}
           placeholder="Beschreiben Sie kurz, was Sie sich vorstellen ..."
+          value={message}
+          onChange={(e) => setMessage(e.currentTarget.value)}
         />
       </div>
 
@@ -336,4 +381,25 @@ function getInitialBudget(packageLabel: string, fallbackBudget: string) {
     fallbackBudget ||
     DEFAULT_BUDGET_OPTION
   );
+}
+
+function validateRequiredFields(name: string, email: string, message: string) {
+  const errors: string[] = [];
+  const trimmedEmail = email.trim();
+
+  if (!name.trim()) {
+    errors.push("Bitte geben Sie Ihren Namen ein.");
+  }
+
+  if (!trimmedEmail) {
+    errors.push("Bitte geben Sie Ihre E-Mail-Adresse ein.");
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
+    errors.push("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
+  }
+
+  if (!message.trim()) {
+    errors.push("Bitte schreiben Sie eine kurze Nachricht.");
+  }
+
+  return errors;
 }
